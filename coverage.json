@@ -1,0 +1,49 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T19:53:40.041Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-23",
+        "summary": "In the Header component (frontend/src/components/Header.tsx), reformat the navigation items inside the header's inner div (XPath: /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]) as a bullet point list — render each nav link/item as a list item within an unordered list, styled to remain horizontal and visually consistent with the existing warm theme.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-24",
+        "summary": "In the WelcomeBanner component (frontend/src/components/WelcomeBanner.tsx), reformat the content inside the 4th child div of the hero section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[4]) as a clean bullet point list — convert any inline, paragraph, or grid-style content in that div into an unordered list of scannable bullet items, using the same yellow/white warm theme styling already applied to the hero.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/WelcomeBanner.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/WelcomeBanner.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/WelcomeBanner.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

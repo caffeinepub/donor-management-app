@@ -1,0 +1,41 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Convert header nav and hero 4th div content to bullet point lists",
+  "requirements": [
+    {
+      "id": "REQ-23",
+      "summary": "Reformat Header navigation items as a bullet point list while maintaining horizontal layout and warm theme styling",
+      "acceptanceCriteria": [
+        "The header inner div's navigation items are rendered inside a <ul> with <li> elements.",
+        "Each nav link appears as a bullet-styled list item.",
+        "The header layout remains usable and does not break on mobile or desktop.",
+        "Existing functionality (routing, auth state display, admin/staff links) is preserved."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Modify the navigation items inside the header's inner div (identified by XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]) to render as an unordered list. Wrap all navigation links in a <ul> element and convert each nav link/item into a <li> element. Apply CSS classes to style the list horizontally (e.g., flex or inline-flex layout) with appropriate spacing and remove default list styling. Ensure bullet points are visible and styled consistently with the existing warm theme. Preserve all existing functionality including routing, Internet Identity login/logout, sub-account session display, staff login links, and admin panel links. Test that the layout remains responsive and does not break on mobile or desktop viewports."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Reformat WelcomeBanner hero 4th div content as a clean bullet point list using the yellow/white warm theme",
+      "acceptanceCriteria": [
+        "The 4th div inside the hero section's inner container renders its content as a <ul> with <li> bullet items.",
+        "Each bullet item is clearly readable against the yellow/white hero background.",
+        "No paragraph blocks or flat inline text remain in that div — all content is bullet-listed.",
+        "The visual style (font, colour, spacing) is consistent with the existing WelcomeBanner yellow theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WelcomeBanner.tsx",
+          "operation": "modify",
+          "description": "Modify the 4th child div of the hero section (identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[4]) to render its content as an unordered list. Convert any inline text, paragraph blocks, or grid-style content currently in that div into a <ul> element with individual <li> bullet items. Apply appropriate CSS classes to ensure bullet points are visible and styled consistently with the existing yellow/white warm theme of the WelcomeBanner. Ensure sufficient contrast for readability against the yellow hero background. Remove any paragraph or inline text formatting that is not part of the bullet list structure. Maintain consistent font, color, and spacing with the rest of the hero section."
+        }
+      ]
+    }
+  ]
+}

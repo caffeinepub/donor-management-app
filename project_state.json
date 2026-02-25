@@ -1,0 +1,299 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Donor management app renamed to TrustTrack. Admins can add/edit/delete donors and bulk import donors via CSV upload; sub-account users (created by main admin with username+password, auto-saved login) can only fill in donation amount, groceries, and notes for existing donors. Donor profiles include a Google Maps share link field; tapping a donor name shows an embedded pop-up/half-page map preview. Data can be exported as CSV (compatible with Google Sheets/Excel) and printed. Donors listed by log number, filterable by place/location. Notes field included. Grocery list is admin-extensible. App has a redesigned UI with yellow and white colour scheme, central light glow effect in the hero section, visual separation between hero and donor list sections, and bullet points in the hero section.",
+  "architectural_notes": [
+    "Role-based access: admin (full CRUD) vs viewer (read-only)",
+    "Grocery donation uses a selection list (initially: rice, dal, sugar); list is admin-extensible",
+    "Donors listed by log number; filterable by place/location",
+    "Sub-accounts (non-admin) can only fill donation amount, groceries, and notes on existing donors — no create/edit/delete donor access",
+    "Account credentials auto-saved for sub-accounts; main admin creates sub-accounts with username+password",
+    "Donor location stored as a Google Maps share link (URL); displayed as embedded pop-up/half-page preview on donor tap"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-frontend-donor-list-page-that-displays-all-donors-grouped-or-filtered-by-place-area-selection-a-dropdown-or-tab-selector-with-donors-sorted-in-ascending-order-by-log-number-within-each-place-group",
+      "title": "Build a frontend donor list page that displays all donors grouped or filtered by place/area selection (a dropdown or tab selector), with donors sorted in ascending order by log number within each place group.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-donor-detail-view-page-accessible-to-all-users-by-clicking-a-donor-from-the-list-the-detail-view-should-show-all-donor-fields-log-number-name-address-address-number-place-added-date-donation-type-money-amount-or-selected-grocery-items-and-notes",
+      "title": "Build a donor detail view page accessible to all users by clicking a donor from the list. The detail view should show all donor fields: log number, name, address, address number, place, added date, donation type, money amount or selected grocery items, and notes.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-login-screen-that-allows-the-admin-to-enter-a-password-pin-to-unlock-admin-features-on-successful-login-show-admin-controls-add-donor-button-edit-and-delete-buttons-on-donor-list-detail-view-and-manage-grocery-list-section-admin-session-should-persist-in-local-state-for-the-session",
+      "title": "Build an admin login screen that allows the admin to enter a password/PIN to unlock admin features. On successful login, show admin controls: Add Donor button, Edit and Delete buttons on donor list/detail view, and Manage Grocery List section. Admin session should persist in local state for the session.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-add-edit-donor-form-accessible-only-to-admins-the-form-must-include-donor-name-address-address-number-place-text-input-or-dropdown-of-existing-places-donation-type-toggle-money-groceries-money-amount-input-visible-when-money-is-selected-grocery-items-multi-select-checkboxes-visible-when-groceries-is-selected-using-items-from-the-grocery-list-added-date-default-to-today-and-notes-field",
+      "title": "Build an Add/Edit Donor form accessible only to admins. The form must include: donor name, address, address number, place (text input or dropdown of existing places), donation type toggle (Money / Groceries), money amount input (visible when Money is selected), grocery items multi-select checkboxes (visible when Groceries is selected, using items from the grocery list), added date (default to today), and notes field.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-manage-grocery-list-section-in-the-admin-panel-where-the-admin-can-view-the-current-grocery-items-rice-dal-sugar-by-default-add-a-new-grocery-item-by-typing-its-name-and-delete-an-existing-grocery-item",
+      "title": "Build a Manage Grocery List section in the admin panel where the admin can view the current grocery items (Rice, Dal, Sugar by default), add a new grocery item by typing its name, and delete an existing grocery item.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-warm-community-oriented-visual-theme-across-the-entire-app-use-earthy-tones-warm-greens-ambers-creams-with-clean-serif-or-humanist-sans-serif-typography-the-layout-should-feel-like-a-community-register-organized-readable-and-approachable-use-card-based-layouts-for-donor-entries-and-a-clear-top-navigation-with-place-filter-and-admin-login-access",
+      "title": "Apply a warm, community-oriented visual theme across the entire app. Use earthy tones (warm greens, ambers, creams) with clean serif or humanist sans-serif typography. The layout should feel like a community register — organized, readable, and approachable. Use card-based layouts for donor entries and a clear top navigation with place filter and admin login access.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rename-the-app-to-trusttrack-throughout-the-entire-codebase-update-the-app-title-in-the-header-footer-page-titles-and-any-branding-references-refresh-the-visual-theme-to-feel-warm-user-friendly-and-community-oriented-consistent-with-the-existing-earthy-palette",
+      "title": "Rename the app to TrustTrack throughout the entire codebase: update the app title in the header, footer, page titles, and any branding references. Refresh the visual theme to feel warm, user-friendly, and community-oriented consistent with the existing earthy palette.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-account-management-ui-in-the-admin-panel-page-accessible-only-to-the-main-admin-show-a-list-of-existing-sub-accounts-username-and-role-provide-a-form-to-create-a-new-sub-account-with-fields-username-password-and-role-selector-admin-user-include-a-delete-button-for-each-sub-account-display-a-clear-label-indicating-which-account-is-the-main-admin",
+      "title": "Build an account management UI in the Admin Panel page accessible only to the main admin. Show a list of existing sub-accounts (username and role). Provide a form to create a new sub-account with fields: username, password, and role selector (Admin / User). Include a delete button for each sub-account. Display a clear label indicating which account is the main admin.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-sub-account-login-screen-accessible-from-the-navigation-users-enter-a-username-and-password-on-success-their-session-is-persisted-in-localstorage-so-they-do-not-need-to-re-enter-credentials-on-next-visit-display-the-logged-in-username-and-a-logout-button-in-the-header-the-session-stores-the-account-role-admin-or-user-to-gate-ui-features-accordingly",
+      "title": "Build a sub-account login screen accessible from the navigation. Users enter a username and password; on success, their session is persisted in localStorage so they do not need to re-enter credentials on next visit. Display the logged-in username and a logout button in the header. The session stores the account role (admin or user) to gate UI features accordingly.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-for-sub-account-users-with-role-user-add-a-record-donation-button-on-each-donor-card-in-the-donor-list-and-on-the-donor-detail-page-clicking-it-opens-a-modal-form-where-the-user-can-fill-in-donation-type-money-or-groceries-money-amount-if-money-selected-grocery-items-multi-select-if-groceries-selected-using-items-from-the-grocery-list-and-notes-submitting-the-form-appends-the-donation-record-to-the-existing-donor-without-modifying-any-other-donor-fields-the-backend-must-expose-a-function-adddonationrecord-donorid-donationentry-accessible-to-authenticated-user-role-accounts",
+      "title": "For sub-account users with role 'user', add a 'Record Donation' button on each donor card in the donor list and on the donor detail page. Clicking it opens a modal/form where the user can fill in: donation type (Money or Groceries), money amount (if Money selected), grocery items multi-select (if Groceries selected, using items from the grocery list), and notes. Submitting the form appends the donation record to the existing donor without modifying any other donor fields. The backend must expose a function addDonationRecord(donorId, donationEntry) accessible to authenticated user-role accounts.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-google-maps-share-link-field-to-the-donor-data-model-in-the-backend-admins-can-paste-a-google-maps-share-url-e-g-https-maps-app-goo-gl-when-creating-or-editing-a-donor-the-donor-detail-page-must-display-a-view-on-map-button-clicking-it-opens-a-half-page-slide-up-drawer-or-modal-that-embeds-the-map-link-in-an-iframe-or-opens-it-in-a-pop-up-if-no-map-link-is-saved-the-button-is-hidden",
+      "title": "Add a Google Maps share link field to the donor data model in the backend. Admins can paste a Google Maps share URL (e.g. https://maps.app.goo.gl/...) when creating or editing a donor. The donor detail page must display a 'View on Map' button; clicking it opens a half-page slide-up drawer or modal that embeds the map link in an iframe or opens it in a pop-up. If no map link is saved, the button is hidden.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-csv-export-feature-accessible-from-the-admin-panel-and-the-donor-list-page-for-admins-clicking-export-csv-downloads-a-file-containing-all-donor-records-with-columns-log-number-name-address-address-number-place-added-date-donation-type-money-amount-grocery-items-comma-separated-notes-and-maps-link-the-csv-must-be-utf-8-encoded-and-compatible-with-google-sheets-and-excel-for-data-analysis",
+      "title": "Implement a CSV export feature accessible from the Admin Panel and the donor list page (for admins). Clicking 'Export CSV' downloads a file containing all donor records with columns: log number, name, address, address number, place, added date, donation type, money amount, grocery items (comma-separated), notes, and maps link. The CSV must be UTF-8 encoded and compatible with Google Sheets and Excel for data analysis.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-print-friendly-layout-for-the-donor-list-and-donor-detail-pages-include-a-print-button-visible-to-all-users-that-triggers-the-browser-print-dialog-the-printed-view-should-hide-navigation-buttons-and-non-essential-ui-elements-and-display-donor-information-in-a-clean-readable-tabular-or-card-format-suitable-for-physical-printouts",
+      "title": "Add a print-friendly layout for the donor list and donor detail pages. Include a 'Print' button (visible to all users) that triggers the browser print dialog. The printed view should hide navigation, buttons, and non-essential UI elements, and display donor information in a clean, readable tabular or card format suitable for physical printouts.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-csv-bulk-import-feature-in-the-admin-panel-admin-only-include-an-import-donors-button-that-opens-a-file-picker-accepting-csv-files-parse-the-uploaded-file-using-the-same-column-schema-as-the-csv-export-log-number-ignored-on-import-auto-assigned-name-address-address-number-place-donation-type-money-amount-grocery-items-comma-separated-notes-maps-link-validate-each-row-and-show-an-import-summary-total-rows-found-successfully-imported-count-and-a-list-of-failed-rows-with-the-reason-provide-a-downloadable-csv-template-file-with-correct-column-headers-so-admins-know-the-exact-format-required",
+      "title": "Add a CSV bulk import feature in the Admin Panel (admin-only). Include an 'Import Donors' button that opens a file picker accepting .csv files. Parse the uploaded file using the same column schema as the CSV export (log number ignored on import — auto-assigned, name, address, address number, place, donation type, money amount, grocery items comma-separated, notes, maps link). Validate each row and show an import summary: total rows found, successfully imported count, and a list of failed rows with the reason. Provide a downloadable CSV template file with correct column headers so admins know the exact format required.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-overall-app-ui-to-have-clear-sections-prominent-action-buttons-and-better-navigation-so-users-immediately-understand-how-to-use-the-app-the-home-landing-view-of-the-donor-list-page-should-include-a-visible-welcome-banner-or-hero-section-with-the-trusttrack-name-a-brief-description-and-prominent-call-to-action-buttons-e-g-view-donors-admin-login-staff-login-the-top-navigation-must-clearly-label-all-sections-donor-list-cards-should-have-visually-distinct-action-buttons-add-donor-record-donation-export-csv-import-donors-empty-states-no-donors-yet-must-show-a-clear-prompt-with-an-action-button-to-add-the-first-donor-all-interactive-elements-must-have-sufficient-size-and-contrast-to-be-easy-to-tap-on-mobile",
+      "title": "Redesign the overall app UI to have clear sections, prominent action buttons, and better navigation so users immediately understand how to use the app. The home/landing view of the donor list page should include a visible welcome banner or hero section with the TrustTrack name, a brief description, and prominent call-to-action buttons (e.g. 'View Donors', 'Admin Login', 'Staff Login'). The top navigation must clearly label all sections. Donor list cards should have visually distinct action buttons (Add Donor, Record Donation, Export CSV, Import Donors). Empty states (no donors yet) must show a clear prompt with an action button to add the first donor. All interactive elements must have sufficient size and contrast to be easy to tap on mobile.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-top-section-of-the-donorlistpage-welcomebanner-component-to-use-a-warm-yellow-and-white-colour-scheme-apply-a-soft-radial-light-glow-effect-centred-in-the-hero-background-to-give-a-bright-welcoming-feel-use-yellow-gradient-tones-e-g-amber-yellow-to-warm-white-for-the-hero-background",
+      "title": "Update the hero/top section of the DonorListPage (WelcomeBanner component) to use a warm yellow and white colour scheme. Apply a soft radial light glow effect centred in the hero background to give a bright, welcoming feel. Use yellow gradient tones (e.g. amber-yellow to warm white) for the hero background.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-visually-separate-the-top-hero-section-from-the-mid-donor-list-section-with-distinct-backgrounds-and-a-clear-visual-divider-the-mid-donor-list-section-should-use-a-clean-white-background-to-contrast-with-the-yellow-hero-above-it",
+      "title": "Visually separate the top hero section from the mid donor list section with distinct backgrounds and a clear visual divider. The mid/donor list section should use a clean white background to contrast with the yellow hero above it.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-any-paragraph-style-descriptive-text-in-the-hero-welcome-banner-section-with-a-bullet-point-list-that-presents-the-key-app-features-or-call-to-action-points-in-a-clean-scannable-format",
+      "title": "Replace any paragraph-style descriptive text in the hero/welcome banner section with a bullet point list that presents the key app features or call-to-action points in a clean, scannable format.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-header-component-frontend-src-components-header-tsx-reformat-the-navigation-items-inside-the-header-s-inner-div-xpath-html-1-body-1-div-1-div-1-header-1-div-1-as-a-bullet-point-list-render-each-nav-link-item-as-a-list-item-within-an-unordered-list-styled-to-remain-horizontal-and-visually-consistent-with-the-existing-warm-theme",
+      "title": "In the Header component (frontend/src/components/Header.tsx), reformat the navigation items inside the header's inner div (XPath: /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]) as a bullet point list — render each nav link/item as a list item within an unordered list, styled to remain horizontal and visually consistent with the existing warm theme.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-welcomebanner-component-frontend-src-components-welcomebanner-tsx-reformat-the-content-inside-the-4th-child-div-of-the-hero-section-xpath-html-1-body-1-div-1-div-1-main-1-div-1-section-1-div-1-div-4-as-a-clean-bullet-point-list-convert-any-inline-paragraph-or-grid-style-content-in-that-div-into-an-unordered-list-of-scannable-bullet-items-using-the-same-yellow-white-warm-theme-styling-already-applied-to-the-hero",
+      "title": "In the WelcomeBanner component (frontend/src/components/WelcomeBanner.tsx), reformat the content inside the 4th child div of the hero section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[4]) as a clean bullet point list — convert any inline, paragraph, or grid-style content in that div into an unordered list of scannable bullet items, using the same yellow/white warm theme styling already applied to the hero.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Donor profile: name, address, address number, added date",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Donation type: money (enter amount) or groceries (selection list: rice, dal, sugar)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Admin role: create, add, edit, delete donors; regular users can only view",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Google Maps view for donor address",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Donor list filtered by place/location selection and ordered by log number",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Notes field for when donor is not home",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Ability to add or delete grocery items from the selection list after app is complete",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Create a Donor data model in the backend with the following fields: log number (auto-incremented unique ID), donor name, address (text), address number, place/area (used for filtering), added date (timestamp), donation type (money or groceries), money amount (optional, numeric), grocery items (optional, list of selected items from: Rice, Dal, Sugar), and notes (free-text, for when donor is not home).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Implement admin-only backend functions to: create a new donor, edit an existing donor's details, delete a donor, add a new grocery item to the grocery selection list, and delete a grocery item from the grocery selection list. Implement a read-only query for all users to fetch donor list and donor details. Use a hardcoded or simple admin PIN/password stored in the actor to distinguish admin from regular users.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "In the donor detail view, embed a Google Maps link or iframe that displays the donor's address. Use the donor's address and address number to construct a Google Maps search URL (https://www.google.com/maps/search/?q=<address>) that opens in a new tab or renders as an embedded static map preview.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Rename app to TrustTrack with updated branding throughout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Multi-account system: main admin creates sub-accounts with username+password; sub-accounts auto-save login; sub-account users can only fill in donation amount, groceries, and notes for existing donors (no add/edit/delete donor access)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Admin can paste a Google Maps share link into a donor profile; tapping donor name shows embedded pop-up/half-page map preview using that link",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "CSV export of all donor data (log number, name, address, place, donation type, amount, groceries, notes, date) compatible with Google Sheets/Excel for data analysis, plus a print-friendly layout for physical printouts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Implement a multi-account system in the backend. The main admin (principal stored in the actor) can create sub-accounts with a username and hashed password. Each account has a role: 'admin' (full access) or 'user' (can only submit donation records for existing donors — amount, groceries, and notes). Expose backend functions: createSubAccount(username, passwordHash, role), listSubAccounts(), deleteSubAccount(username), and authenticateSubAccount(username, passwordHash) returning a session token or role. The main admin's credentials are bootstrapped at deploy time.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "CSV bulk upload (import) feature for admins: upload a .csv file to import multiple donors at once, with validation, import summary, error flagging, and a downloadable CSV template",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Full UI redesign: clear sections, prominent action buttons, better navigation, welcoming layout with obvious entry points (Donor List, Admin Panel, Login)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "UI update: yellow and white colour scheme, central light glow in hero, visual separation between top hero and mid donor list sections, bullet points in hero section",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Donor Management App",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

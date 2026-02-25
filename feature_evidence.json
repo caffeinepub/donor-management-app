@@ -1,0 +1,43 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-in-the-header-component-frontend-src-components-header-tsx-reformat-the-navigation-items-inside-the-header-s-inner-div-xpath-html-1-body-1-div-1-div-1-header-1-div-1-as-a-bullet-point-list-render-each-nav-link-item-as-a-list-item-within-an-unordered-list-styled-to-remain-horizontal-and-visually-consistent-with-the-existing-warm-theme",
+      "featureTitle": "In the Header component (frontend/src/components/Header.tsx), reformat the navigation items inside the header's inner div (XPath: /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]) as a bullet point list — render each nav link/item as a list item within an unordered list, styled to remain horizontal and visually consistent with the existing warm theme.",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-in-the-welcomebanner-component-frontend-src-components-welcomebanner-tsx-reformat-the-content-inside-the-4th-child-div-of-the-hero-section-xpath-html-1-body-1-div-1-div-1-main-1-div-1-section-1-div-1-div-4-as-a-clean-bullet-point-list-convert-any-inline-paragraph-or-grid-style-content-in-that-div-into-an-unordered-list-of-scannable-bullet-items-using-the-same-yellow-white-warm-theme-styling-already-applied-to-the-hero",
+      "featureTitle": "In the WelcomeBanner component (frontend/src/components/WelcomeBanner.tsx), reformat the content inside the 4th child div of the hero section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[4]) as a clean bullet point list — convert any inline, paragraph, or grid-style content in that div into an unordered list of scannable bullet items, using the same yellow/white warm theme styling already applied to the hero.",
+      "files": [
+        "frontend/src/components/WelcomeBanner.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-24"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

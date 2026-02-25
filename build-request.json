@@ -1,0 +1,60 @@
+{
+  "kind": "build_request",
+  "title": "Convert header nav and hero 4th div content to bullet point lists",
+  "projectName": "TrustTrack",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-23",
+      "text": "In the Header component (frontend/src/components/Header.tsx), reformat the navigation items inside the header's inner div (XPath: /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]) as a bullet point list — render each nav link/item as a list item within an unordered list, styled to remain horizontal and visually consistent with the existing warm theme.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Bullet it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The header inner div's navigation items are rendered inside a <ul> with <li> elements.",
+        "Each nav link appears as a bullet-styled list item.",
+        "The header layout remains usable and does not break on mobile or desktop.",
+        "Existing functionality (routing, auth state display, admin/staff links) is preserved."
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "In the WelcomeBanner component (frontend/src/components/WelcomeBanner.tsx), reformat the content inside the 4th child div of the hero section (XPath: /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[4]) as a clean bullet point list — convert any inline, paragraph, or grid-style content in that div into an unordered list of scannable bullet items, using the same yellow/white warm theme styling already applied to the hero.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Bullet it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The 4th div inside the hero section's inner container renders its content as a <ul> with <li> bullet items.",
+        "Each bullet item is clearly readable against the yellow/white hero background.",
+        "No paragraph blocks or flat inline text remain in that div — all content is bullet-listed.",
+        "The visual style (font, colour, spacing) is consistent with the existing WelcomeBanner yellow theme."
+      ]
+    }
+  ],
+  "constraints": [
+    "Only modify the two targeted elements identified by their XPaths — do not alter any other sections of the Header or WelcomeBanner.",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/components/ui/.",
+    "Preserve all existing functionality and routing logic in the Header."
+  ],
+  "nonGoals": [
+    "Redesigning the overall header layout or navigation structure beyond bullet formatting.",
+    "Changing the hero section's colour scheme, glow effect, or other visual tokens.",
+    "Modifying any backend files."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
